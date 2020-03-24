@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-storybook"
+    }
+  },
+  "defaultProject": "ng-storybook",
+  "cli": {
+    "analytics": "5ba3a07d-c96b-49fc-8f1a-a4a0fb8098e6"
+  }
 }
