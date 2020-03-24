@@ -1,8 +1,35 @@
-// import { storiesOf } from '@storybook/angular';
-// // import { withNotes } from '@storybook/addon-notes';
-// import { action } from '@storybook/addon-actions';
-// import { CardComponent } from '../app/components/card.component';
-//
+import {action, withActions} from '@storybook/addon-actions';
+import {CardComponent} from './card.component';
+
+export default {
+  title: 'Card',
+  component: CardComponent,
+  docs: { iframeHeight: 300 },
+  parameters: {
+    // knobs: {
+    //   disableDebounce: true,
+    // },
+  },
+};
+
+export const Basic = () => {
+  return {
+    component: CardComponent,
+    props: {
+      title: 'Hello card!',
+      subtitle: 'waiting to be clicked',
+      btnClicked: action('👊 Button was clicked'),
+    },
+
+  };
+};
+
+Basic.story = {
+  name: 'With Action',
+};
+
+
+
 // storiesOf('Card', module)
 //   .add('empty', () => ({
 //     component: CardComponent,
