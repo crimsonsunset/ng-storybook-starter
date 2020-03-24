@@ -1,14 +1,25 @@
+import '@storybook/addon-console';
 import { configure, addDecorator, addParameters } from '@storybook/angular';
 import {withA11y} from '@storybook/addon-a11y';
+import {withKnobs} from '@storybook/addon-knobs';
+import { setConsoleOptions } from '@storybook/addon-console';
+
+
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import docJson from '../documentation.json';
-import {withKnobs} from '@storybook/addon-knobs';
-setCompodocJson(docJson);
 
+setCompodocJson(docJson);
 addDecorator(withA11y);
 addDecorator(withKnobs);
+setConsoleOptions({
+  panelExclude: [],
+});
 
 addParameters({
+  viewport: {
+    // viewports: newViewports, // newViewports would be an ViewportMap. (see below for examples)
+    // defaultViewport: 'someDefault',
+  },
   knobs: {
     disableDebounce: true,
   },
