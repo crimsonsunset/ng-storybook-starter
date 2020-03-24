@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c .storybook -o ./dist/storybook",
     "storybook": "yarn docs:json && start-storybook -p 6060 -s src/assets",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d ."
   },
