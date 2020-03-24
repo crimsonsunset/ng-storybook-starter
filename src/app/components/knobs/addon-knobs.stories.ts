@@ -1,0 +1,71 @@
+import { action } from '@storybook/addon-actions';
+
+import {
+  withKnobs,
+  text,
+  number,
+  boolean,
+  array,
+  select,
+  radios,
+  color,
+  date,
+  button,
+} from '@storybook/addon-knobs';
+
+// import { SimpleKnobsComponent } from './knobs.component';
+import { AllKnobsComponent } from './all-knobs.component';
+
+export default {
+  title: 'Knobs',
+  decorators: [withKnobs],
+  parameters: {
+    knobs: {
+      disableDebounce: true,
+    },
+  },
+};
+
+export const Baseline = () => {
+  const name = text('name', 'Jane');
+  const stock = number('stock', 20, {
+    range: true,
+    min: 0,
+    max: 30,
+    step: 5,
+  });
+  const fruits = {
+    Apple: 'apples',
+    Banana: 'bananas',
+    Cherry: 'cherries',
+  };
+  const fruit = select('fruit', fruits, 'apples');
+  const otherFruits = {
+    Kiwi: 'kiwi',
+    Guava: 'guava',
+    Watermelon: 'watermelon',
+  };
+  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');
+  const price = number('price', 2.25);
+
+  const border = color('border', 'deeppink');
+  const today = date('today', new Date('Jan 20 2017'));
+  const items = array('items', ['Laptop', 'Book', 'Whiskey']);
+  const nice = boolean('nice', true);
+  button('Arbitrary action', action('You clicked it!'));
+
+  return {
+    component: AllKnobsComponent,
+    props: {
+      name,
+      stock,
+      fruit,
+      otherFruit,
+      price,
+      border,
+      today,
+      items,
+      nice,
+    },
+  };
+};

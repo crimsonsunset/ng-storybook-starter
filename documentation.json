@@ -40,6 +40,109 @@
     "directives": [],
     "components": [
         {
+            "name": "AllKnobsComponent",
+            "id": "component-AllKnobsComponent-14aeed5596d118bdcb74460fddc30207",
+            "file": "src/app/components/knobs/all-knobs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-simple-knobs-component",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div\n  [ngStyle]=\"{ border: '2px dotted ' + border, 'padding.px': '8 22', 'border-radius.px': '8' }\"\n>\n  <h1>My name is {{ name }},</h1>\n  <h3>today is {{ today | date }}</h3>\n  <p *ngIf=\"stock\">I have a stock of {{ stock }} {{ fruit }}, costing $ {{ price }} each.</p>\n  <p *ngIf=\"!stock\">I'm out of {{ fruit }}.</p>\n  <p *ngIf=\"stock && nice\">Sorry.</p>\n  <p>Also, I have:</p>\n  <ul>\n    <li *ngFor=\"let item of items\">{{ item }}</li>\n  </ul>\n  <p *ngIf=\"nice\">Nice to meet you!</p>\n  <p *ngIf=\"!nice\">Leave me alone!</p>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "border",
+                    "line": 30
+                },
+                {
+                    "name": "fruit",
+                    "line": 33
+                },
+                {
+                    "name": "items",
+                    "line": 39
+                },
+                {
+                    "name": "name",
+                    "line": 36
+                },
+                {
+                    "name": "nice",
+                    "line": 48
+                },
+                {
+                    "name": "price",
+                    "line": 27
+                },
+                {
+                    "name": "stock",
+                    "line": 45
+                },
+                {
+                    "name": "today",
+                    "line": 42
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 58,
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';\n\nconst logger = console;\n\n@Component({\n  selector: 'storybook-simple-knobs-component',\n  template: `\n    <div\n      [ngStyle]=\"{ border: '2px dotted ' + border, 'padding.px': '8 22', 'border-radius.px': '8' }\"\n    >\n      <h1>My name is {{ name }},</h1>\n      <h3>today is {{ today | date }}</h3>\n      <p *ngIf=\"stock\">I have a stock of {{ stock }} {{ fruit }}, costing $ {{ price }} each.</p>\n      <p *ngIf=\"!stock\">I'm out of {{ fruit }}.</p>\n      <p *ngIf=\"stock && nice\">Sorry.</p>\n      <p>Also, I have:</p>\n      <ul>\n        <li *ngFor=\"let item of items\">{{ item }}</li>\n      </ul>\n      <p *ngIf=\"nice\">Nice to meet you!</p>\n      <p *ngIf=\"!nice\">Leave me alone!</p>\n    </div>\n  `,\n})\nexport class AllKnobsComponent implements OnChanges, OnInit {\n  @Input()\n  price;\n\n  @Input()\n  border;\n\n  @Input()\n  fruit;\n\n  @Input()\n  name;\n\n  @Input()\n  items;\n\n  @Input()\n  today;\n\n  @Input()\n  stock;\n\n  @Input()\n  nice;\n\n  constructor() {\n    logger.debug('constructor');\n  }\n\n  ngOnInit(): void {\n    logger.debug('on init, user component');\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    logger.debug(changes);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 48
+            },
+            "implements": [
+                "OnChanges",
+                "OnInit"
+            ]
+        },
+        {
             "name": "AppComponent",
             "id": "component-AppComponent-76b0c886e73a0bc0efb7a5ab43128908",
             "file": "src/app/app.component.ts",
@@ -583,7 +686,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-fc480a82c5c9e430bd4587393b13b7c8",
+            "id": "component-CardComponent-dd38253a50e0675b94189cc9ef794058",
             "file": "src/app/components/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -607,12 +710,11 @@
                 },
                 {
                     "name": "subtitle",
-                    "defaultValue": "'sub'",
                     "line": 17
                 },
                 {
                     "name": "title",
-                    "defaultValue": "'tit'",
+                    "defaultValue": "'default title'",
                     "line": 16
                 }
             ],
@@ -641,7 +743,7 @@
             "description": "<p>This is a card with some docs</p>\n<p>It supports <a href=\"https://en.wikipedia.org/wiki/Markdown\">markdown</a>, so you can embed formatted text,\nlike <strong>bold</strong>, <em>italic</em>, and <code>inline code</code>.</p>\n",
             "rawdescription": "This is a card with some docs\n\nIt supports [markdown](https://en.wikipedia.org/wiki/Markdown), so you can embed formatted text,\nlike **bold**, _italic_, and `inline code`.",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n/**\n * This is a card with some docs\n *\n * It supports [markdown](https://en.wikipedia.org/wiki/Markdown), so you can embed formatted text,\n * like **bold**, _italic_, and `inline code`.\n *\n */\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent {\n  @Input('title') title = 'tit';\n  @Input('subtitle') subtitle = 'sub';\n  @Input('content') content = '😄';\n\n  @Output() btnClicked = new EventEmitter<boolean>();\n\n  constructor() {}\n\n  /**\n   * Happens when button is clicked\n   */\n  handleBtnClick() {\n    this.btnClicked.emit(true);\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n/**\n * This is a card with some docs\n *\n * It supports [markdown](https://en.wikipedia.org/wiki/Markdown), so you can embed formatted text,\n * like **bold**, _italic_, and `inline code`.\n *\n */\n@Component({\n  selector: 'app-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss']\n})\nexport class CardComponent {\n  @Input('title') title = 'default title';\n  @Input('subtitle') subtitle;\n  @Input('content') content = '😄';\n\n  @Output() btnClicked = new EventEmitter<boolean>();\n\n  constructor() {}\n\n  /**\n   * Happens when button is clicked\n   */\n  handleBtnClick() {\n    this.btnClicked.emit(true);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -737,12 +839,20 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Basic",
+                "name": "AllKnobs",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/knobs/addon-knobs.stories.ts",
+                "type": "",
+                "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
+            },
+            {
+                "name": "Baseline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/card.stories.ts",
                 "type": "",
-                "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Hello card!',\n      subtitle: 'waiting to be clicked',\n      btnClicked: action('👊 Button was clicked'),\n    },\n\n  };\n}"
+                "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Baseline',\n    },\n\n  };\n}"
             },
             {
                 "name": "Basic",
@@ -785,11 +895,35 @@
                 "defaultValue": "'An exported constant'"
             },
             {
+                "name": "logger",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/knobs/all-knobs.component.ts",
+                "type": "",
+                "defaultValue": "console"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/test.ts",
                 "type": "any"
+            },
+            {
+                "name": "WithAction",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/card.stories.ts",
+                "type": "",
+                "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Hello card!',\n      subtitle: 'waiting to be clicked',\n      btnClicked: action('👊 Button was clicked'),\n    },\n\n  };\n}"
+            },
+            {
+                "name": "WithSubtitle",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/card.stories.ts",
+                "type": "",
+                "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Wow a title',\n      subtitle: 'Subtitle',\n    },\n\n  };\n}"
             }
         ],
         "functions": [],
@@ -806,14 +940,40 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/components/knobs/addon-knobs.stories.ts": [
+                {
+                    "name": "AllKnobs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/knobs/addon-knobs.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
+                }
+            ],
             "src/app/components/card.stories.ts": [
                 {
-                    "name": "Basic",
+                    "name": "Baseline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Baseline',\n    },\n\n  };\n}"
+                },
+                {
+                    "name": "WithAction",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/card.stories.ts",
                     "type": "",
                     "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Hello card!',\n      subtitle: 'waiting to be clicked',\n      btnClicked: action('👊 Button was clicked'),\n    },\n\n  };\n}"
+                },
+                {
+                    "name": "WithSubtitle",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/card.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Wow a title',\n      subtitle: 'Subtitle',\n    },\n\n  };\n}"
                 }
             ],
             "src/app/components/doc-button/doc-button.stories.ts": [
@@ -872,6 +1032,16 @@
                     "type": "string",
                     "defaultValue": "'An exported constant'"
                 }
+            ],
+            "src/app/components/knobs/all-knobs.component.ts": [
+                {
+                    "name": "logger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/knobs/all-knobs.component.ts",
+                    "type": "",
+                    "defaultValue": "console"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -905,7 +1075,7 @@
         ]
     },
     "coverage": {
-        "count": 8,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -931,7 +1101,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Basic",
+                "name": "Baseline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithAction",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithSubtitle",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -970,6 +1160,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/knobs/addon-knobs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AllKnobs",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/knobs/all-knobs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AllKnobsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/knobs/all-knobs.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "logger",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
