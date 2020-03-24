@@ -12,18 +12,10 @@ import {
   date,
   button,
 } from '@storybook/addon-knobs';
-
-// import { SimpleKnobsComponent } from './knobs.component';
 import { AllKnobsComponent } from './all-knobs.component';
 
 export default {
   title: 'Knobs',
-  decorators: [withKnobs],
-  parameters: {
-    knobs: {
-      disableDebounce: true,
-    },
-  },
 };
 
 export const Baseline = () => {

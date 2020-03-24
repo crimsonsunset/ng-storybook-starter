@@ -839,14 +839,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "AllKnobs",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/knobs/addon-knobs.stories.ts",
-                "type": "",
-                "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
-            },
-            {
                 "name": "Baseline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -855,7 +847,15 @@
                 "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Baseline',\n    },\n\n  };\n}"
             },
             {
-                "name": "Basic",
+                "name": "Baseline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/knobs/addon-knobs.stories.ts",
+                "type": "",
+                "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
+            },
+            {
+                "name": "Baseline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/doc-button/doc-button.stories.ts",
@@ -940,16 +940,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/components/knobs/addon-knobs.stories.ts": [
-                {
-                    "name": "AllKnobs",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/knobs/addon-knobs.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
-                }
-            ],
             "src/app/components/card.stories.ts": [
                 {
                     "name": "Baseline",
@@ -976,9 +966,19 @@
                     "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Wow a title',\n      subtitle: 'Subtitle',\n    },\n\n  };\n}"
                 }
             ],
+            "src/app/components/knobs/addon-knobs.stories.ts": [
+                {
+                    "name": "Baseline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/knobs/addon-knobs.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
+                }
+            ],
             "src/app/components/doc-button/doc-button.stories.ts": [
                 {
-                    "name": "Basic",
+                    "name": "Baseline",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/doc-button/doc-button.stories.ts",
@@ -1159,7 +1159,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Basic",
+                "name": "Baseline",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1169,7 +1169,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "AllKnobs",
+                "name": "Baseline",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
