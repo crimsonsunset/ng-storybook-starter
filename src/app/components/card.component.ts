@@ -13,8 +13,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input('title') title = 'titlez';
-  @Input('subtitle') subtitle = 'subtitlez';
+  @Input('title') title = 'default title';
+  @Input('subtitle') subtitle;
   @Input('content') content = '😄';
 
   @Output() btnClicked = new EventEmitter<boolean>();
