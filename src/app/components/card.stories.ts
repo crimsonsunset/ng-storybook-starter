@@ -1,11 +1,21 @@
 import {action} from '@storybook/addon-actions';
 import {CardComponent} from './card.component';
+// import { CRMButtonComponent } from '@components/crm-button/crm-button.component';
+import { moduleMetadata } from '@storybook/angular';
+import {MatButtonModule} from '@angular/material/button';
 
 export default {
   title: 'Card',
   component: CardComponent,
   docs: { iframeHeight: 150 },
-  parameters: {},
+  decorators: [
+    moduleMetadata({
+      // imports both components to allow component composition with storybook
+      imports: [
+        MatButtonModule,
+      ]
+    }),
+  ]
 };
 
 export const Baseline = () => {
