@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-storybook": "build-storybook -c .storybook -o ./dist/storybook",
+    "storybook:watch": "yarn docs:json && node --inspect ./node_modules/@storybook/angular/bin/index.js -p 6060 -s src/assets",
     "storybook": "yarn docs:json && start-storybook -p 6060 -s src/assets",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d ."
   },
@@ -48,6 +49,7 @@
     "@storybook/addon-viewport": "^5.3.17",
     "@storybook/addons": "^5.3.17",
     "@storybook/angular": "^5.3.17",
+    "@storybook/cli": "^5.3.17",
     "@types/jasmine": "^3.5.10",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^13.9.3",
