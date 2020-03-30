@@ -850,17 +850,17 @@
                 "name": "Baseline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/doc-button/doc-button.stories.ts",
+                "file": "src/app/components/knobs/addon-knobs.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    label: 'Docs Test',\n  },\n})"
+                "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
             },
             {
                 "name": "Baseline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/knobs/addon-knobs.stories.ts",
+                "file": "src/app/components/doc-button/doc-button.stories.ts",
                 "type": "",
-                "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
+                "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    label: 'Docs Test',\n  },\n})"
             },
             {
                 "name": "context",
@@ -924,22 +924,6 @@
                 "file": "src/app/components/card.stories.ts",
                 "type": "",
                 "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Wow a title',\n      subtitle: 'Subtitle',\n    },\n\n  };\n}"
-            },
-            {
-                "name": "yy",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": ".storybook/preview.ts",
-                "type": "",
-                "defaultValue": "setConsoleOptions"
-            },
-            {
-                "name": "z",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": ".storybook/preview.ts",
-                "type": "",
-                "defaultValue": "docJson"
             }
         ],
         "functions": [],
@@ -982,16 +966,6 @@
                     "defaultValue": "() => {\n  return {\n    component: CardComponent,\n    props: {\n      title: 'Wow a title',\n      subtitle: 'Subtitle',\n    },\n\n  };\n}"
                 }
             ],
-            "src/app/components/doc-button/doc-button.stories.ts": [
-                {
-                    "name": "Baseline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/doc-button/doc-button.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    label: 'Docs Test',\n  },\n})"
-                }
-            ],
             "src/app/components/knobs/addon-knobs.stories.ts": [
                 {
                     "name": "Baseline",
@@ -1000,6 +974,16 @@
                     "file": "src/app/components/knobs/addon-knobs.stories.ts",
                     "type": "",
                     "defaultValue": "() => {\n  const name = text('name', 'Jane');\n  const stock = number('stock', 20, {\n    range: true,\n    min: 0,\n    max: 30,\n    step: 5,\n  });\n  const fruits = {\n    Apple: 'apples',\n    Banana: 'bananas',\n    Cherry: 'cherries',\n  };\n  const fruit = select('fruit', fruits, 'apples');\n  const otherFruits = {\n    Kiwi: 'kiwi',\n    Guava: 'guava',\n    Watermelon: 'watermelon',\n  };\n  const otherFruit = radios('Other Fruit', otherFruits, 'watermelon');\n  const price = number('price', 2.25);\n\n  const border = color('border', 'deeppink');\n  const today = date('today', new Date('Jan 20 2017'));\n  const items = array('items', ['Laptop', 'Book', 'Whiskey']);\n  const nice = boolean('nice', true);\n  button('Arbitrary action', action('You clicked it!'));\n\n  return {\n    component: AllKnobsComponent,\n    props: {\n      name,\n      stock,\n      fruit,\n      otherFruit,\n      price,\n      border,\n      today,\n      items,\n      nice,\n    },\n  };\n}"
+                }
+            ],
+            "src/app/components/doc-button/doc-button.stories.ts": [
+                {
+                    "name": "Baseline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/doc-button/doc-button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: ButtonComponent,\n  props: {\n    label: 'Docs Test',\n  },\n})"
                 }
             ],
             "src/test.ts": [
@@ -1058,24 +1042,6 @@
                     "type": "",
                     "defaultValue": "console"
                 }
-            ],
-            ".storybook/preview.ts": [
-                {
-                    "name": "yy",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": ".storybook/preview.ts",
-                    "type": "",
-                    "defaultValue": "setConsoleOptions"
-                },
-                {
-                    "name": "z",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": ".storybook/preview.ts",
-                    "type": "",
-                    "defaultValue": "docJson"
-                }
             ]
         },
         "groupedFunctions": {},
@@ -1109,29 +1075,9 @@
         ]
     },
     "coverage": {
-        "count": 4,
+        "count": 5,
         "status": "low",
         "files": [
-            {
-                "filePath": ".storybook/preview.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "yy",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": ".storybook/preview.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "z",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
